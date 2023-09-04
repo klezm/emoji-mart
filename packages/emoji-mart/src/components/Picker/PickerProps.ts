@@ -1,9 +1,11 @@
 export default {
   autoFocus: {
     value: false,
+    // value: true,
   },
   dynamicWidth: {
     value: false,
+    // value: true,
   },
   emojiButtonColors: {
     value: null,
@@ -13,9 +15,11 @@ export default {
   },
   emojiButtonSize: {
     value: 36,
+    // value: 100,
   },
   emojiSize: {
     value: 24,
+    // value: 100 - (100 / 4),
   },
   emojiVersion: {
     value: 14,
@@ -70,6 +74,7 @@ export default {
   },
   perLine: {
     value: 9,
+    // value: 20,
   },
   previewEmoji: {
     value: null,

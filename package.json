@@ -14,7 +14,9 @@
     "check:types": "tsc",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "test": "jest"
+    "test": "jest",
+    "start": "yarn install && yarn dev",
+    "start-vite": "yarn add -O --ignore-workspace-root-check vite && yarn install && vite"
   },
   "devDependencies": {
     "@babel/core": "7.18.9",

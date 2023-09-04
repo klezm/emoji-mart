@@ -91,11 +91,13 @@ dialog {
 section {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 4% 0;
+  // padding: 4% 0;
+  // padding: 10px 0;
 }
 
 header {
-  margin-bottom: 2em;
+  // margin-bottom: 2em;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -215,6 +217,8 @@ footer {
   text-align: center;
 
   nav { margin: 1em 0 2em }
+
+  // display: none;
 }
 
 #missive {
@@ -297,4 +301,20 @@ $coinSize: 24px;
   50% { transform: rotate(0eg); }
   75% { transform: rotate(-5deg); }
   100% { transform: rotate(0deg); }
+}
+
+
+// my custom styles
+
+em-emoji-picker {
+  // width: 400px;
+  // width: 100%;
+  width: 80vw;
+  // min-width: 250px;
+  // height: 100%;
+  // height: 85vh;
+  height: 99vh;
+  resize: horizontal;
+  // overflow: auto;
+  overflow-x: auto;
 }
