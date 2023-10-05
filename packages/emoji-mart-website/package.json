@@ -4,7 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "parcel index.html --no-autoinstall",
-    "build": "parcel build index.html --no-autoinstall --public-url https://missiveapp.com/open/emoji-mart --dist-dir emoji-mart"
+    "build": "parcel build index.html --no-autoinstall --public-url https://missiveapp.com/open/emoji-mart --dist-dir emoji-mart",
+
+    "build-gh-pages0": "parcel build index.html --no-autoinstall --public-url ./ --no-cache --no-source-maps",
+    "build-gh-pages1": "parcel build index.html --no-autoinstall --no-cache --public-url replacethislinewithadot --no-source-maps",
+    "build-gh-pages2": "parcel build index.html --no-autoinstall --no-cache --public-url replacethislinewithadot",
+    "build-gh-pages3": "parcel build index.html --no-autoinstall --no-cache --public-url 'https://automatic-giggle-7vg7qrgrp47hpgwq-8080.app.github.dev' --no-source-maps --no-scope-hoist",
+    "build-gh-pages": "parcel build index.html --no-autoinstall --no-cache --public-url ./",
+    "build-gh-pages4": "parcel build index.html --no-autoinstall --no-cache --public-url 'https://automatic-giggle-7vg7qrgrp47hpgwq-8080.app.github.dev'",
+
+    "build-gh-pages-v": "vite build --base ./",
+
+    "serve-html": "npx http-server dist"
   },
   "devDependencies": {
     "posthtml-extend": "0.6.2",

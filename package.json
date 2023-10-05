@@ -11,12 +11,42 @@
     "build:data": "yarn workspace @emoji-mart/data build",
     "build:react": "yarn workspace @emoji-mart/react build",
     "build:website": "yarn workspace @emoji-mart/website build",
+
+    "build:gh-pages0": "yarn workspace @emoji-mart/website build-gh-pages",
+    "build:gh-pages": "yarn workspace @emoji-mart/website parcel build index.html --no-autoinstall --no-cache --public-url ./",
+    "build:gh-pages-v": "yarn workspace @emoji-mart/website build-gh-pages-v",
+
     "check:types": "tsc",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "test": "jest",
     "start": "yarn install && yarn dev",
-    "start-vite": "yarn add -O --ignore-workspace-root-check vite && yarn install && vite"
+
+    "start-vite": "yarn add -O --ignore-workspace-root-check vite && yarn install && yarn workspace @emoji-mart/website vite preview",
+    "start-vite0": "yarn add -O --ignore-workspace-root-check vite && yarn install && cd packages/emoji-mart-website/ && vite preview",
+    "_start-vite1": "yarn add -O --ignore-workspace-root-check vite && yarn install && vite",
+    "vite-install": "yarn add -O --ignore-workspace-root-check vite",
+    "vite-v": "yarn workspace @emoji-mart/website vite",
+    "vite-p": "yarn workspace @emoji-mart/website vite preview",
+    "vite-b": "yarn workspace @emoji-mart/website vite build --logLevel info",
+    "_vite0": "yarn vite preview --base /workspaces/emoji-mart/packages/emoji-mart-website/",
+    "vite01": "yarn workspace @emoji-mart/website vite preview",
+    "_vite1": "yarn vite --base /workspaces/emoji-mart/packages/emoji-mart-website/ --mode dev",
+    "_vite2": "yarn vite --base /workspaces/emoji-mart/packages/emoji-mart-website/emoji-mart/ --mode dev",
+    "_vite3": "yarn vite --base /workspaces/emoji-mart/packages/emoji-mart-website/dist/ --mode dev",
+
+    "serve-html": "npx -w @emoji-mart/website http-server dist/",
+    "serve-html:w": "yarn workspace @emoji-mart/website serve-html",
+    "serve-html:w0": "yarn workspace @emoji-mart/website serve-html dist",
+    "serve-html:w1": "cd packages/emoji-mart-website/dist/ && pwd && ls -lha && npx http-server dist",
+    "serve-html-s": "cd packages/emoji-mart-website/dist/ && npx serve ./",
+
+    "clean": "rm -rf .parcel-cache; rm -rf packages/emoji-mart-website/dist; rm -rf packages/emoji-mart-website/public",
+    "updatePath0": "sed -i -- 's/files/.\\//g' dist/files/*.css",
+    "updatePath1": "sed -i.bak 's/replacethislinewithadot/./g' dist/index.html",
+    "updatePath2": "sed -i 's/replacethislinewithadot/./g' packages/emoji-mart-website/dist/*.html",
+    "updatePath": "sed -i 's/replacethislinewithadot/./g' packages/emoji-mart-website/dist/*.*",
+    "play": "yarn clean && yarn build:gh-pages && yarn updatePath && yarn serve-html"
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
@@ -25,8 +55,8 @@
     "@parcel/transformer-inline-string": "2.6.2",
     "@parcel/transformer-sass": "2.6.2",
     "@parcel/transformer-typescript-types": "2.6.2",
-    "jest-environment-jsdom": "28.0.0",
     "jest": "^28.1.3",
+    "jest-environment-jsdom": "28.0.0",
     "parcel": "2.6.2",
     "prettier": "2.5.1",
     "ts-jest": "^28.0.7",
